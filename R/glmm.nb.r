@@ -86,7 +86,7 @@ glmm.nb <- function (fixed, random, data, correlation,
       mf$invwt <- 1/wz
       mcall$data <- mf
       
-      th <- suppressWarnings( theta.ml(y=y, mu=mu, n=sum(wts), weights=wts, limit=10, trace=FALSE) )
+      th <- suppressWarnings( theta.ml(y=y, mu=mu, n=sum(wts), weights=wts, limit=100, trace=FALSE) )
       if (is.null(th)) th <- fam$theta
       fam <- NegBin(theta = th)
     }

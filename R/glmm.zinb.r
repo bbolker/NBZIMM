@@ -94,7 +94,7 @@ glmm.zinb <- function (fixed, random, data, correlation,
       mcall$data <- mf
       
       ww <- wts * (1 - zp)
-      th <- suppressWarnings( theta.ml(y=y, mu=mu, n=sum(ww), weights=ww, limit=10, trace=FALSE) )
+      th <- suppressWarnings( theta.ml(y=y, mu=mu, n=sum(ww), weights=ww, limit=100, trace=FALSE) )
       if (is.null(th)) th <- fam$theta
       fam <- NegBin(theta = th)
       
